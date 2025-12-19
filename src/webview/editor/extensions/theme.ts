@@ -28,7 +28,8 @@ export const liveMarkdownTheme = EditorView.theme({
   },
   '.cm-lineNumbers .cm-gutterElement': {
     color: 'var(--vscode-editorLineNumber-foreground, #858585)',
-    fontSize: '0.9em',
+    fontFamily: 'var(--vscode-editor-font-family, monospace)',
+    fontSize: '12px',
     minWidth: '3em',
     paddingRight: '8px',
   },
