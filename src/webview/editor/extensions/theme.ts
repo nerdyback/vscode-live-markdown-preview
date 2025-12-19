@@ -43,20 +43,15 @@ export const liveMarkdownTheme = EditorView.theme({
   },
   '.cm-header-1': {
     fontSize: '2.4em',
-    lineHeight: '1.3',
-    marginTop: '0.5em',
   },
   '.cm-header-2': {
     fontSize: '1.9em',
-    lineHeight: '1.35',
   },
   '.cm-header-3': {
     fontSize: '1.5em',
-    lineHeight: '1.4',
   },
   '.cm-header-4': {
     fontSize: '1.25em',
-    lineHeight: '1.4',
   },
   '.cm-header-5': {
     fontSize: '1.1em',
@@ -64,6 +59,25 @@ export const liveMarkdownTheme = EditorView.theme({
   '.cm-header-6': {
     fontSize: '1em',
     opacity: '0.9',
+  },
+  // line decorations for proper gutter sync
+  '.cm-line.cm-header-line-1': {
+    lineHeight: '2.4',
+  },
+  '.cm-line.cm-header-line-2': {
+    lineHeight: '2.0',
+  },
+  '.cm-line.cm-header-line-3': {
+    lineHeight: '1.8',
+  },
+  '.cm-line.cm-header-line-4': {
+    lineHeight: '1.6',
+  },
+  '.cm-line.cm-header-line-5': {
+    lineHeight: '1.6',
+  },
+  '.cm-line.cm-header-line-6': {
+    lineHeight: '1.6',
   },
   '.cm-emphasis': {
     fontStyle: 'italic',

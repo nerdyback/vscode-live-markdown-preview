@@ -23,7 +23,7 @@ class HiddenWidget extends WidgetType {
 
 const hiddenWidget = new HiddenWidget();
 
-// reusable mark decorations
+// reusable mark decorations (for text styling)
 const headerMarks = {
   1: Decoration.mark({ class: 'cm-header cm-header-1' }),
   2: Decoration.mark({ class: 'cm-header cm-header-2' }),
@@ -31,6 +31,16 @@ const headerMarks = {
   4: Decoration.mark({ class: 'cm-header cm-header-4' }),
   5: Decoration.mark({ class: 'cm-header cm-header-5' }),
   6: Decoration.mark({ class: 'cm-header cm-header-6' }),
+};
+
+// line decorations (for proper line height sync with gutter)
+const headerLines = {
+  1: Decoration.line({ class: 'cm-header-line cm-header-line-1' }),
+  2: Decoration.line({ class: 'cm-header-line cm-header-line-2' }),
+  3: Decoration.line({ class: 'cm-header-line cm-header-line-3' }),
+  4: Decoration.line({ class: 'cm-header-line cm-header-line-4' }),
+  5: Decoration.line({ class: 'cm-header-line cm-header-line-5' }),
+  6: Decoration.line({ class: 'cm-header-line cm-header-line-6' }),
 };
 
 const emphasisMark = Decoration.mark({ class: 'cm-emphasis' });
@@ -76,10 +86,18 @@ export const livePreviewPlugin = ViewPlugin.fromClass(
             if (name.startsWith('ATXHeading')) {
               const level = parseInt(name.replace('ATXHeading', ''), 10) as 1 | 2 | 3 | 4 | 5 | 6;
               if (level >= 1 && level <= 6) {
+                // mark decoration for text styling
                 decorations.push({
                   from: node.from,
                   to: node.to,
                   deco: headerMarks[level],
+                });
+                // line decoration for proper height sync with gutter
+                const lineStart = doc.lineAt(node.from).from;
+                decorations.push({
+                  from: lineStart,
+                  to: lineStart,
+                  deco: headerLines[level],
                 });
               }
             }
