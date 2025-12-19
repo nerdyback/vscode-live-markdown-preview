@@ -1,7 +1,7 @@
 const esbuild = require('esbuild');
-const path = require('path');
 
 const watch = process.argv.includes('--watch');
+const production = process.argv.includes('--production');
 
 const extensionConfig = {
   entryPoints: ['src/extension.ts'],
@@ -11,7 +11,8 @@ const extensionConfig = {
   format: 'cjs',
   platform: 'node',
   target: 'node18',
-  sourcemap: true,
+  sourcemap: !production,
+  minify: production,
 };
 
 const webviewConfig = {
@@ -21,7 +22,8 @@ const webviewConfig = {
   format: 'iife',
   platform: 'browser',
   target: 'es2020',
-  sourcemap: true,
+  sourcemap: !production,
+  minify: production,
 };
 
 async function build() {
