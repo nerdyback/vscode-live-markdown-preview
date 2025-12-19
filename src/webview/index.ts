@@ -1,4 +1,4 @@
-import { EditorView, keymap } from '@codemirror/view';
+import { EditorView, keymap, lineNumbers, highlightActiveLineGutter } from '@codemirror/view';
 import { EditorState } from '@codemirror/state';
 import { markdown } from '@codemirror/lang-markdown';
 import { defaultKeymap, history, historyKeymap } from '@codemirror/commands';
@@ -38,6 +38,8 @@ function createEditor(content: string) {
     state: EditorState.create({
       doc: content,
       extensions: [
+        lineNumbers(),
+        highlightActiveLineGutter(),
         markdown(),
         cursorLineField,
         livePreviewPlugin,

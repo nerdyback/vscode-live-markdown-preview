@@ -20,6 +20,20 @@ export const liveMarkdownTheme = EditorView.theme({
   '.cm-activeLine': {
     backgroundColor: 'var(--vscode-editor-lineHighlightBackground, transparent)',
   },
+  '.cm-gutters': {
+    backgroundColor: 'var(--vscode-editorGutter-background, transparent)',
+    borderRight: 'none',
+  },
+  '.cm-lineNumbers .cm-gutterElement': {
+    color: 'var(--vscode-editorLineNumber-foreground, #858585)',
+    fontSize: '0.9em',
+    minWidth: '3em',
+    paddingRight: '8px',
+  },
+  '.cm-activeLineGutter': {
+    backgroundColor: 'transparent',
+    color: 'var(--vscode-editorLineNumber-activeForeground, #c6c6c6)',
+  },
   '.cm-header': {
     fontWeight: 'bold',
     color: 'var(--vscode-textLink-foreground, #3794ff)',
