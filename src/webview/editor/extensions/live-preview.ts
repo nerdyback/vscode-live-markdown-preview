@@ -113,11 +113,20 @@ export const livePreviewPlugin = ViewPlugin.fromClass(
 
             // hide syntax marks when not on cursor line
             if (!isOnCursorLine) {
-              if (
-                name === 'HeaderMark' ||
-                name === 'EmphasisMark' ||
-                name === 'StrikethroughMark'
-              ) {
+              if (name === 'HeaderMark') {
+                // hide the # and trailing space
+                let hideEnd = node.to;
+                const lineEnd = doc.lineAt(node.from).to;
+                const textAfter = doc.sliceString(node.to, Math.min(node.to + 1, lineEnd));
+                if (textAfter === ' ') {
+                  hideEnd = node.to + 1;
+                }
+                decorations.push({
+                  from: node.from,
+                  to: hideEnd,
+                  deco: hiddenDeco,
+                });
+              } else if (name === 'EmphasisMark' || name === 'StrikethroughMark') {
                 decorations.push({
                   from: node.from,
                   to: node.to,
