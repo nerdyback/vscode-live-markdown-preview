@@ -7,6 +7,8 @@ export const liveMarkdownTheme = EditorView.theme({
   },
   '.cm-scroller': {
     fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+    fontSize: '16px',
+    lineHeight: '1.6',
   },
   '.cm-content': {
     caretColor: 'var(--vscode-editorCursor-foreground, #fff)',
@@ -39,25 +41,28 @@ export const liveMarkdownTheme = EditorView.theme({
     color: 'var(--vscode-textLink-foreground, #3794ff)',
   },
   '.cm-header-1': {
-    fontSize: '2em',
-    lineHeight: '1.4',
+    fontSize: '2.4em',
+    lineHeight: '1.3',
+    marginTop: '0.5em',
   },
   '.cm-header-2': {
+    fontSize: '1.9em',
+    lineHeight: '1.35',
+  },
+  '.cm-header-3': {
     fontSize: '1.5em',
     lineHeight: '1.4',
   },
-  '.cm-header-3': {
-    fontSize: '1.25em',
-    lineHeight: '1.3',
-  },
   '.cm-header-4': {
-    fontSize: '1.1em',
+    fontSize: '1.25em',
+    lineHeight: '1.4',
   },
   '.cm-header-5': {
-    fontSize: '1em',
+    fontSize: '1.1em',
   },
   '.cm-header-6': {
-    fontSize: '0.9em',
+    fontSize: '1em',
+    opacity: '0.9',
   },
   '.cm-emphasis': {
     fontStyle: 'italic',
