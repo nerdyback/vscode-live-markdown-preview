@@ -97,7 +97,7 @@ export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
       line-height: var(--vscode-editor-line-height, 1.5);
     }
     .cm-content {
-      padding: 10px;
+      padding: 16px 16px 16px 24px;
     }
   </style>
 </head>
