@@ -31,7 +31,7 @@ export const liveMarkdownTheme = EditorView.theme({
     fontFamily: 'var(--vscode-editor-font-family, monospace)',
     fontSize: '12px',
     minWidth: '3em',
-    paddingRight: '8px',
+    paddingRight: '16px',
   },
   '.cm-activeLineGutter': {
     backgroundColor: 'transparent',
