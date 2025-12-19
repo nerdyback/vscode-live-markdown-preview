@@ -47,14 +47,14 @@ export const liveMarkdownTheme = EditorView.theme({
   },
   '.cm-emphasis': {
     fontStyle: 'italic',
-    color: '#c586c0',
+    color: 'var(--vscode-textPreformat-foreground, inherit)',
   },
   '.cm-strong': {
     fontWeight: 'bold',
-    color: '#dcdcaa',
+    color: 'var(--vscode-textLink-activeForeground, inherit)',
   },
   '.cm-strikethrough': {
     textDecoration: 'line-through',
-    opacity: '0.7',
+    opacity: '0.6',
   },
 });
